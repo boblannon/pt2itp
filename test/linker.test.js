@@ -27,6 +27,17 @@ test('Passing Linker Matches', (t) => {
     'diff suff');
 
     t.deepEquals(
+        linker({
+            text: 'long dvwy',
+            text_tokenless: 'long'
+        }, [{
+            id: 1,
+            text: 'coll pwy',
+            text_tokenless: '',
+        }]), false, 'no match');
+
+
+    t.deepEquals(
         linker({ text: 'main st' }, [
             { id: 1, text: 'main st' },
             { id: 2, text: 'asdg st' },
